@@ -1,10 +1,11 @@
+const btn = document.querySelector("button");
 const quotes = [
   {
     quote: `"The best way to find yourself is to lose yourself in the service of others."`,
     person: `Mahatma Gandhi`,
   },
   {
-    quote: `"At his best, main is the noblest of all animals; separated from law and justice he is the worst."`,
+    quote: `"At his best, man is the noblest of all animals; separated from law and justice he is the worst."`,
     person: `Aristotle`,
   },
   {
@@ -36,3 +37,25 @@ const quotes = [
     person: `Lao Tzu`,
   },
 ];
+
+const quote = document.querySelector("#quote");
+const person = document.querySelector("#person");
+
+let randomIndex = Math.floor(Math.random() * quotes.length);
+
+console.log(randomIndex);
+quote.textContent = quotes[randomIndex].quote;
+person.textContent = quotes[randomIndex].person;
+console.log(randomIndex, quotes[randomIndex].quote, quotes[randomIndex].person);
+
+btn.addEventListener("click", () => {
+  randomIndex = Math.floor(Math.random() * quotes.length);
+  console.log(randomIndex);
+  quote.textContent = quotes[randomIndex].quote;
+  person.textContent = quotes[randomIndex].person;
+  console.log(
+    randomIndex,
+    quotes[randomIndex].quote,
+    quotes[randomIndex].person
+  );
+});
